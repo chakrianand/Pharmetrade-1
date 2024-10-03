@@ -35,4 +35,5 @@ COPY --from=build /app/dist ./dist
 EXPOSE 5173
 
 # Define the command to run your application
-CMD ["node", "dist/app.js"]
+CMD ["node", "dist/index.js"]
+
