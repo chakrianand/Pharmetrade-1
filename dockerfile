@@ -4,6 +4,12 @@ FROM node:18 as build
 # Set the working directory
 WORKDIR /app
 
+# Set proxy (if required)
+ARG HTTP_PROXY
+ARG HTTPS_PROXY
+ENV HTTP_PROXY=${HTTP_PROXY}
+ENV HTTPS_PROXY=${HTTPS_PROXY}
+
 # Copy package.json and package-lock.json to install dependencies
 COPY package*.json ./
 
