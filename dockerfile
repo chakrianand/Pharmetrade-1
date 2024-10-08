@@ -8,6 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
+RUN ping -c 4 google.com
 RUN npm install
 
 # Copy all project files to the working directory
