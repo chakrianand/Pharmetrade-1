@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pharmetrade-service
+spec:
+  selector:
+    app: pharmetrade
+  ports:
+    - protocol: TCP
+      port: 80           # Exposed port on the service
+      targetPort: 5173    # The port inside the pod
+  type: NodePort
