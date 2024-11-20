@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pharmetrade
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: pharmetrade
+  template:
+    metadata:
+      labels:
+        app: pharmetrade
+    spec:
+      containers:
+        - name: pharmetrade
+          image: headway630/pharmetrade:latest
+          ports:
+            - containerPort: 5173
